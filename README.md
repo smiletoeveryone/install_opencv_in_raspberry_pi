@@ -1,7 +1,8 @@
 # install_opencv_in_raspberry_pi
 ![](https://github.com/smiletoeveryone/install_opencv_in_raspberry_pi/blob/master/cv_version.jpg)
 
-1st section
+**1st section
+
 $ sudo apt-get update
 $ sudo apt-get upgrade
 $ sudo reboot
@@ -19,7 +20,7 @@ $ sudo apt-get install libatlas-base-dev gfortran
 
 $ sudo apt-get install python2.7-dev python3-dev
 
-2nd section - downloading opencv
+**2nd section - downloading opencv
 
 $ wget -O opencv-3.2.0.zip https://sourceforge.net/projects/opencvlibrary/files/opencv-unix/3.2.0/opencv-3.2.0.zip/download
 
@@ -27,7 +28,7 @@ $ unzip opencv-3.2.0.zip
 
 $ cd opencv-3.2.0
 
-3rd section setup the environment for python
+**3rd section setup the environment for python
 
 $ wget https://bootstrap.pypa.io/get-pip.py
 
@@ -39,21 +40,28 @@ $ sudo rm -rf ~/.cache/pip
 
 $ vim ~/.profile ### add the 3 lines below in the end of the file
 
-virtualenv and virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+**virtualenv and virtualenvwrapper
+
+$ export WORKON_HOME=$HOME/.virtualenvs
+
+$ source /usr/local/bin/virtualenvwrapper.sh
+
 $ source ~/.profile
 
-#creat a virtual env that name is “cv” for python
+**creat a virtual env that name is “cv” for python
+
 $ mkvirtualenv cv -p python2
+
 $ mkvirtualenv cv -p python3
 
-check the steps above you are doing right
+**check the steps above you are doing right
+
 $ workon cv
 
 $ pip install numpy
 
-compile and install opencv
+**compile and install opencv
+
 $ workon cv
 
 $ cd ~/opencv-3.2.0/
@@ -71,25 +79,30 @@ $ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.2.0/modules \
 
 -D BUILD_EXAMPLES=ON ..
+
 $ make -j4
 
-if you could not compile sucesssfully, please try again
+**if you could not compile sucesssfully, please try again
+
 $ make clean
 
 $ make
 
-for python2.7
+**for python2.7
+
 $ cd ~/.virtualenvs/cv/lib/python2.7/site-packages/
 
 $ sduo ln -s /usr/local/lib/python2.7/site-packages/cv2.so cv2.so
 
-for python3
+**for python3
+
 $ cd ~/.virtualenvs/cv/lib/python3.4/site-packages/
 
 $ sudo ln -s /usr/local/lib/python3.7/site-packages/cv2.so cv2.so
 
-4th section
+**4th section
 test and check your opencv version
+
 $ source ~/.profile
 
 $ workon cv

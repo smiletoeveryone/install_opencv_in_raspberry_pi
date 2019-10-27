@@ -7,6 +7,7 @@ $ sudo apt-get upgrade
 $ sudo reboot
 
 $ sudo apt-get install build-essential cmake pkg-config
+
 $ sudo apt-get install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev
 
 $ sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
@@ -19,14 +20,21 @@ $ sudo apt-get install libatlas-base-dev gfortran
 $ sudo apt-get install python2.7-dev python3-dev
 
 2nd section - downloading opencv
+
 $ wget -O opencv-3.2.0.zip https://sourceforge.net/projects/opencvlibrary/files/opencv-unix/3.2.0/opencv-3.2.0.zip/download
+
 $ unzip opencv-3.2.0.zip
+
 $ cd opencv-3.2.0
 
 3rd section setup the environment for python
+
 $ wget https://bootstrap.pypa.io/get-pip.py
+
 $ sudo python get-pip.py
+
 $ sudo pip install virtualenv virtualenvwrapper
+
 $ sudo rm -rf ~/.cache/pip
 
 $ vim ~/.profile ### add the 3 lines below in the end of the file
